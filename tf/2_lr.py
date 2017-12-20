@@ -1,3 +1,4 @@
+#coding=utf-8  
 import tensorflow as tf
 
 # Model parameters
@@ -10,8 +11,9 @@ y = tf.placeholder(tf.float32)
 
 # loss
 loss = tf.reduce_sum(tf.square(linear_model - y)) # sum of the squares
-# optimizer
+# 梯度下降优化器
 optimizer = tf.train.GradientDescentOptimizer(0.01)
+# 最小化loss
 train = optimizer.minimize(loss)
 
 # training data
